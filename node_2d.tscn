@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6vd86drxuosk"]
+[gd_scene load_steps=6 format=3 uid="uid://b6vd86drxuosk"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_3ency"]
 [ext_resource type="PackedScene" uid="uid://dkull4foo6a2y" path="res://depot.tscn" id="2_dfv72"]
 [ext_resource type="PackedScene" uid="uid://dnkmo5n67nujv" path="res://tower.tscn" id="3_mwbqg"]
+[ext_resource type="PackedScene" uid="uid://bopvrh5v1d72k" path="res://GameOverUI.tscn" id="4_pwxs8"]
+[ext_resource type="PackedScene" uid="uid://ltpjavmxugoc" path="res://HUD.tscn" id="5_a4qrt"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_3ency")
@@ -23,3 +25,7 @@ position = Vector2(-249, 40)
 
 [node name="Tower4" parent="." groups=["towers"] instance=ExtResource("3_mwbqg")]
 position = Vector2(-72, -122)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("4_pwxs8")]
+
+[node name="CanvasLayer2" parent="." instance=ExtResource("5_a4qrt")]
