@@ -6,12 +6,16 @@ var towers = []
 var score = 0
 var strikes = 0
 var max_strikes = 3
+var is_game_over = false
 
 signal score_updated(new_score)
 signal strikes_updated(new_strikes)
 signal game_over
 
 func _ready():
+	score = 0
+	strikes = 0
+	is_game_over = false
 	request_timer.wait_time = 4.0
 	request_timer.one_shot = false
 	request_timer.timeout.connect(create_new_request)
@@ -19,10 +23,19 @@ func _ready():
 	request_timer.start()
 	
 	await get_tree().create_timer(0.1).timeout
-	create_new_request()
+	towers = get_tree().get_nodes_in_group("towers")
+	if not towers.is_empty():
+		towers.shuffle()
+		active_tower = towers[0]
+		active_tower.set_active_request(true)
+		request_timer.start()
 func create_new_request():
+	if is_game_over:
+		return
 	if active_tower != null:
 		add_strike()
+	if is_game_over:
+		return
 	towers = get_tree().get_nodes_in_group("towers")
 	if towers.is_empty():
 		return
@@ -32,6 +45,7 @@ func create_new_request():
 	active_tower = towers[0]
 	active_tower.set_active_request(true)
 func complete_request(tower_node):
+	if is_game_over:return false
 	if tower_node == active_tower:
 		score+=1
 		score_updated.emit(score)
@@ -41,9 +55,11 @@ func complete_request(tower_node):
 		return true
 	return false
 func add_strike():
+	if is_game_over: return
 	strikes+=1
 	strikes_updated.emit(strikes)
 	if strikes>=max_strikes:
+		is_game_over = true
 		game_over.emit()
 	
 			
