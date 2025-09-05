@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c83s87q1iqiul"]
+
+[ext_resource type="Script" path="res://courier.gd" id="1_2tt47"]
+
+[sub_resource type="Curve2D" id="Curve2D_lmyal"]
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_lmyal")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+script = ExtResource("1_2tt47")
