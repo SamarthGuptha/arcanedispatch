@@ -1,0 +1,2 @@
+extends Area2D
+signal path_draw_started

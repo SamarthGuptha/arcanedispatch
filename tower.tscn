@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnkmo5n67nujv"]
+
+[ext_resource type="Script" path="res://tower.gd" id="1_m7kph"]
+[ext_resource type="Texture2D" uid="uid://dhldwuprb04y6" path="res://icon.svg" id="2_7413e"]
+[ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://images/icon.jpg" id="3_g4oms"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4fi5f"]
+radius = 19.0
+
+[node name="Tower" type="Area2D"]
+script = ExtResource("1_m7kph")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.454902, 0, 1, 1)
+scale = Vector2(0.234375, 0.203125)
+texture = ExtResource("2_7413e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4fi5f")
+
+[node name="RequestIndicator" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-45.25, -59.25)
+scale = Vector2(0.00878906, 0.00878906)
+texture = ExtResource("3_g4oms")
