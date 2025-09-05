@@ -15,12 +15,15 @@ modulate = Color(0.454902, 0, 1, 1)
 scale = Vector2(0.234375, 0.203125)
 texture = ExtResource("2_7413e")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_4fi5f")
-
 [node name="RequestIndicator" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(1, 1, 0, 1)
-position = Vector2(-45.25, -59.25)
-scale = Vector2(0.00878906, 0.00878906)
+position = Vector2(-11, -8)
+scale = Vector2(0.0205078, 0.0224609)
 texture = ExtResource("3_g4oms")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4fi5f")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

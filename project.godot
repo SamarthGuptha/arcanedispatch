@@ -23,6 +23,10 @@ RequestManager="*res://RequestManager.gd"
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
+[global_group]
+
+towers=""
+
 [input]
 
 ui_accept={

@@ -1,8 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6vd86drxuosk"]
+[gd_scene load_steps=4 format=3 uid="uid://b6vd86drxuosk"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_3ency"]
+[ext_resource type="PackedScene" uid="uid://dkull4foo6a2y" path="res://depot.tscn" id="2_dfv72"]
+[ext_resource type="PackedScene" uid="uid://dnkmo5n67nujv" path="res://tower.tscn" id="3_mwbqg"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_3ency")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Depot" parent="." instance=ExtResource("2_dfv72")]
+position = Vector2(-181, -38)
+
+[node name="Tower" parent="." groups=["towers"] instance=ExtResource("3_mwbqg")]
+position = Vector2(-173, 132)
+
+[node name="Tower2" parent="." groups=["towers"] instance=ExtResource("3_mwbqg")]
+position = Vector2(-18, -13)
+
+[node name="Tower3" parent="." groups=["towers"] instance=ExtResource("3_mwbqg")]
+position = Vector2(-249, 40)
+
+[node name="Tower4" parent="." groups=["towers"] instance=ExtResource("3_mwbqg")]
+position = Vector2(-72, -122)
