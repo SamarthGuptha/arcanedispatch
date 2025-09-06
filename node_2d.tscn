@@ -12,20 +12,26 @@ script = ExtResource("1_3ency")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Depot" parent="." instance=ExtResource("2_dfv72")]
-position = Vector2(-181, -38)
+position = Vector2(-2, -2)
 
 [node name="Tower" parent="." groups=["towers"] instance=ExtResource("3_mwbqg")]
-position = Vector2(-173, 132)
+position = Vector2(209, 58)
 
 [node name="Tower2" parent="." groups=["towers"] instance=ExtResource("3_mwbqg")]
-position = Vector2(-18, -13)
+position = Vector2(99, -199)
 
 [node name="Tower3" parent="." groups=["towers"] instance=ExtResource("3_mwbqg")]
-position = Vector2(-249, 40)
+position = Vector2(-186, 125)
 
 [node name="Tower4" parent="." groups=["towers"] instance=ExtResource("3_mwbqg")]
-position = Vector2(-72, -122)
+position = Vector2(-292, 17)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("4_pwxs8")]
 
 [node name="CanvasLayer2" parent="." instance=ExtResource("5_a4qrt")]
+
+[node name="Tower5" parent="." groups=["towers"] instance=ExtResource("3_mwbqg")]
+position = Vector2(-199, -182)
+
+[node name="Tower6" parent="." groups=["towers"] instance=ExtResource("3_mwbqg")]
+position = Vector2(331, -99)

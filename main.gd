@@ -24,6 +24,7 @@ func _on_depot_path_draw_started():
 	current_line = Line2D.new()
 	current_line.width = 10.0
 	current_line.default_color = Color.WHITE
+	current_line.add_point(depot.global_position)
 	add_child(current_line)
 
 func handle_path_finished():
